@@ -21,5 +21,5 @@ func main() {
 	http.HandleFunc("/", OilPriceHandler)
 
 	fmt.Println("starting service")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":8081", nil))
 }

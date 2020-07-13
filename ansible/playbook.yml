@@ -1,0 +1,15 @@
+---
+  - name: "Install nginx"
+    hosts: web
+    become: yes
+    tasks:
+      - name: "Install nginx from apt"
+        apt:
+          name: nginx
+          state: present
+      - name: "Copy nginx conf"
+        copy:
+          src: files/app.conf
+          dest: /etc/nginx/sites-available/default
+      - name: "Reload nginx"
+        command: nginx -s reload
