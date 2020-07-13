@@ -73,4 +73,4 @@ jobs:
         env:
           ANSIBLE_SSH_KEY: ${{ secrets.PRIVATE_KEY }}
         with:
-          args: ansible-playbook -i ansible/git_inventory ansible/playbook.yml
+          args: ansible-playbook -i ansible/inventory ansible/playbook.yml
