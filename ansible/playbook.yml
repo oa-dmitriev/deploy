@@ -7,9 +7,17 @@
         apt:
           name: nginx
           state: present
+
       - name: "Copy nginx conf"
         copy:
           src: files/app.conf
           dest: /etc/nginx/sites-available/default
+      
       - name: "Reload nginx"
         command: nginx -s reload
+
+  - name: "Install docker"
+    become: yes
+    hosts: all
+    roles:
+      - geerlingguy.docker
